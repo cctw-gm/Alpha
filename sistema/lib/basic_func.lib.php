@@ -1,9 +1,6 @@
 <?php
 class basic_func 
 {
-  private $cadena;
-  private $cadena2;
-
   function Limpiar($cadena)
   {
     return (preg_replace('/[^A-Za-z0-9_-ñÑ]/', '', $cadena));
