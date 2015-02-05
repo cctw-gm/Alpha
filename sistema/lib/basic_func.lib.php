@@ -1,15 +1,15 @@
 <?php
 class basic_func 
 {
-  private $cadena
-  private $cadena2
+  private $cadena;
+  private $cadena2;
 
-  function Limpiar($this->cadena)
+  function Limpiar($cadena)
   {
-    return (preg_replace('/[^A-Za-z0-9_-ñÑ]/', '', $this->cadena));
+    return (preg_replace('/[^A-Za-z0-9_-ñÑ]/', '', $cadena));
   }
 
-  function FormaUrl($this->cadena2,$this->cadena){
+  function FormaUrl($cadena2,$cadena){
     if($this->cadena2 =='entrante'){
       return (str_replace('_', ' ', selft::Limpiar($this->cadena)));
     }else if($this->cadena2 =='saliente'){
