@@ -1,4 +1,10 @@
 <?php
+//
+//  librerias funciones basicas
+//  http://wwww.cctw-gm.org
+//  Autores: el-antiguo
+//  vercion de la libreria: 1.0
+//
 class basic_func 
 {
   private $cadena
