@@ -46,10 +46,10 @@ class principal extends basic_func
 
   function __construct() 
   {
-    if (isset($_GET['seccion'])) $this->seccion = basic_func::FormaUrl('entrante',$_GET['seccion']);
+    if (isset($_GET['seccion'])) $this->seccion = strtolower(basic_func::Capturar('get','seccion'));
     else $this->seccion = INDEX;
-    if ($this->seccion == array(spl_classes()))    $print = new $this->seccion();
-    else  $print = new printtemas();
+    if(class_exists($this->seccion)) $print =  new $this->seccion();
+   else  $print = new printtemas();
 
   }
 } 
