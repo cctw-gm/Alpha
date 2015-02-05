@@ -11,7 +11,7 @@ class basic_func
 
   function FormaUrl($this->cadena2,$this->cadena){
     if($this->cadena2 =='entrante'){
-      return (str_replace('_', ' ', limpiar($this->cadena)));
+      return (str_replace('_', ' ', selft::Limpiar($this->cadena)));
     }else if($this->cadena2 =='saliente'){
       $con_acento = "ÀÁÂÃÄÅàáâãäåÒÓÔÕÖØòóôõöøÈÉÊËèéêëÇçÌÍÎÏìíîïÙÚÛÜùúûüÿÑñ";
       $sin_acento = "AAAAAAaaaaaaOOOOOOooooooEEEEeeeeCcIIIIiiiiUUUUuuuuyNn";
