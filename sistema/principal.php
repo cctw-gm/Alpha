@@ -1,3 +1,4 @@
+<?php 
 //
 //  libreria principal cctw_gm
 //  http://wwww.cctw-gm.org
@@ -8,15 +9,15 @@
 //                       Definiciones
 
 define('INSTALL', true);
-define('ROOT_PHAT', $_SERVER['DOCUMENT_ROOT'].'/cctw-gm/');                     // Define la ruta raiz del cervidor 
-define('SISTEMA_PHAT', $_SERVER['DOCUMENT_ROOT'].'/cctw-gm/sistema/');          // Define la ruta raiz del sistema
-define('INDEX', 'index');                                                       // Define el modulo de la portada
-define('DB_HOST', 'localhost');                                                 // Define la ip de la BD
-define('DB_USER', 'root');                                                      // Define el usuario de la BD
-define('DB_PASS', 'n4u8qibw');                                                  // Define la contraseña de la BD
-define('DB_NAME', 'cctw_gm');                                                   // Define la BD
-define('SEND_ERRORS_TO', 'you@yourwebsite.com');                                // en caso de error de la DB envia un correo a...
-define('DISPLAY_DEBUG', true);                                                  // Muestrar los erroes de DB (solo activar para pollectos en desarrollo)
+define('ROOT_PHAT', $_SERVER['DOCUMENT_ROOT']);                        // Define la ruta raiz del cervidor 
+define('SISTEMA_PHAT', $_SERVER['DOCUMENT_ROOT'].'/sistema/');         // Define la ruta raiz del sistema
+define('INDEX', 'index');                                              // Define el modulo de la portada
+define('DB_HOST', '');                                                 // Define la ip de la BD
+define('DB_USER', '');                                                 // Define el usuario de la BD
+define('DB_PASS', '');                                                 // Define la contraseña de la BD
+define('DB_NAME', '');                                                 // Define la BD
+define('SEND_ERRORS_TO', '');                                          // en caso de error de la DB envia un correo a...
+define('DISPLAY_DEBUG', true);                                         // Muestrar los erroes de DB (solo activar para pollectos en desarrollo)
 // directorios (TO DO #2)
 define('PHAT_LIBRERIAS', 'lib');
 define('PHAT_MODULOS', 'mod');
@@ -45,10 +46,11 @@ class principal extends basic_func
 
   function __construct() 
   {
-    if (isset($_GET['seccion'])) $this->seccion = basic_func::limpiar($_GET['seccion']);
+    if (isset($_GET['seccion'])) $this->seccion = basic_func::FormaUrl('entrante',$_GET['seccion']);
     else $this->seccion = INDEX;
     if ($this->seccion == array(spl_classes()))    $print = new $this->seccion();
     else  $print = new printtemas();
 
   }
 } 
+ ?>
